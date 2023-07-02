@@ -1,2 +1,0 @@
-# Curriculo
-Repositório para Curriculo
