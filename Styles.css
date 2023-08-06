@@ -12,7 +12,12 @@
     display: none;
     text-align: center;
 }
+.grid{
+    display: grid;
+    grid-template-columns: 25% 70% ;
+    min-height: 100vh;
 
+}
 .popup button {
     display: block;
     margin: 0 0 20px auto;
@@ -27,13 +32,6 @@
 /*-----------------------------------------------------------------------------Info Pessoal---------------------------------------------------------------------------*/
 .BOX_INF_PESSOAL {
     background-color: #9DB2BF;
-    min-height: 100vh;
-    /*vh serve para meter ate ao fundo da pagina*/
-    width: 30%;
-    float: left;
-    /*border-radius: 15px;*/
-    /*cantos curvos*/
-
 }
 
 /*-----------------------------------------------------------------------------FOTO---------------------------------------------------------------------------*/
@@ -51,8 +49,8 @@
 
 /*-----------------------------------------------------------------------------Projetos---------------------------------------------------------------------------*/
 th,td{
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 100px;
+    padding-right: 10px;
     border: 2px;
 }
 
@@ -68,9 +66,9 @@ th,td{
 /*---------------------------------------------------------------------------Experiencia profissional-------------------------------------------------------------------*/
 .Experiencia_Profissional {
     text-align: left;
-    width: 69%;
-    float: right;
-    margin-left: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /*-----------------------------------------------------------------------------Footer---------------------------------------------------------------------------*/
@@ -82,8 +80,6 @@ th,td{
     height: 20px;
     /* altura do footer */
     background: black;
-    margin-top: 15px;
-
 }
 
 /*-----------------------------------------------------------------------------arranjar pagina web--------------------------------------------------------------------*/
