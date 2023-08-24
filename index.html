@@ -10,6 +10,8 @@
   <link rel="icon" href="Imagens/favicon_package_v0.16/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/939c64060d.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <!----site dops--->
 </head>
 
@@ -19,7 +21,7 @@
 
   <div class="popup">
     <button id="close">&times;</button>
-    <h2>Aviso de Estado</h2>
+    <h4>Aviso de Estado</h4>
     <p>
       Este curriculo ainda se encontra em desenvolvimento
       Pelo que podem existir erros/bugs ou atrasos na atualização.
@@ -29,171 +31,102 @@
   <!----------------------------------------------------------------SCRIPT----------------------------------------------------------------------------------------------------->
   <script src="script.js"></script>
 
-  <!----------------------------------------------------------------CAixa de Info Pessoal------------------------------------------------------------------------------------>
-  <!----------------------------------------------------------------FOTO------------------------------------------------------------------------------------------------------>
-  <div class="grid">
-    <div class="BOX_INF_PESSOAL">>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3 BOX_INF_PESSOAL">
 
-      <div class="Foto">
-        <a href="index.html"><img src="foto1.png" /></a>
+        <!----------------------------------------------------------------CAixa de Info Pessoal------------------------------------------------------------------------------------>
+
+        <!----------------------------------------------------------------FOTO------------------------------------------------------------------------------------------------------>
+        <div class="Foto">
+          <img src="Multimedia/foto1.png" />
+          <!---<img  src="Imagens/2.png" class="img2"/>----->
+        </div>
+
+        <!----------------------------------------------------------------INFO Pessoal------------------------------------------------------------------------------------>
+        <div class="INF_PESSOAL">
+
+          <h1 style="text-align: center; font-family: 'Times New Roman', Times, serif;">César</h1>
+          <h1 style="text-align: center;font-family: 'Times New Roman', Times, serif;">Coelho</h1>
+
+          <h1 style="color: black; font-family: 'Times New Roman', Times, serif;"><u>Operador CNC</u></h1>
+          <br>
+
+          <h4 style="font-family: 'Times New Roman', Times, serif;"><i class="fa-solid fa-cake-candles"></i> 04/06/1997
+          </h4>
+          <h4 style="font-family: 'Times New Roman', Times, serif;"><i class="fa-solid fa-envelope"></i>
+            cesarCoelho97@gmail.com</h4>
+          <h4 style="font-family: 'Times New Roman', Times, serif;"><i class="fa-solid fa-phone"></i> 918265866</h4>
+
+          <!----------------------------------------------------------------Projetos------------------------------------------------------------------------------------>
+
+          <h1 style="text-align: center;">Projetos: </h1>
+
+
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h4>Projetos:</h4>
+              </div>
+              <div class="col">
+                <h4>Estado:</h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <h4><u>Curriculo Online.</u></h4>
+              </div>
+              <div class="col">
+                <h4>A terminar</h4>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h4><u>Site de Lingua Gestual.</u></h4>
+            </div>
+            <div class="col">
+              <h4>Em curso</h4>
+            </div>
+          </div>
+
+          <!----------------------------------------------------------------HoBBIEs------------------------------------------------------------------------------------>
+          <p></p>
+          <h1 style="text-align: center;">Hobbies: </h1>
+
+        </div>
       </div>
 
-      <!----------------------------------------------------------------INFO Pessoal------------------------------------------------------------------------------------>
-
-      <div class="INF_PESSOAL">
-
-        <strong>
-          <h1 style="text-align: center;">César</h1>
-          <h1 style="text-align: center;">Coelho</h1>
-        </strong>
-
-        <h1 style="color: #2D4356;">Operador CNC</h1>
-
-        <br>
-
-        <h3><i class="fa-solid fa-cake-candles"></i> 04/06/1997</h3>
-        <h3><i class="fa-solid fa-envelope"></i> cesarCoelho97@gmail.com</h3>
-        <h3><i class="fa-solid fa-phone"></i> 918265866</h3>
-
-      </div>
-
-      <!----------------------------------------------------------------Projetos------------------------------------------------------------------------------------>
-
-      <h1 style="text-align: center;">Projetos: </h1>
-
-      <table>
-        <tr>
-          <th>
-            <h2>Projetos:</h2>
-          </th>
-          <th>
-            <h2>Estado:</h2>
-          </th>
-        </tr>
-        <tr>
-          <td>
-            <h3>Curriculo Online.</h3>
-          </td>
-          <td>
-            <h3>A terminar</h3>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <h3>Site de Lingua Gestual.</h3>
-          </td>
-          <td>
-            <h3>Em curso</h3>
-          </td>
-        </tr>
-      </table>
-
-      <!----------------------------------------------------------------Hobbies------------------------------------------------------------------------------------>
-      <br>
-      <h1 style="text-align: center;">Hobbies </h1>
-      <center>
-        <h2><a href="caminhar.html" style=text-decoration:none;> Passear/caminhar</a></h2>
-        <h2><a href="" style=text-decoration:none;>Gaming</h2>
-          <h2><a href="" style=text-decoration:none;>Ler</h2>
-            <h2><a href="" style=text-decoration:none;>Projetos caseiros</h2>
-        <h2><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style=text-decoration:none;>Rick Rolling</a></h2>
-      </center>
-    </div>
-    <!----------------------------------------------------------------Experiencia Profissional------------------------------------------------------------------------------------>
-    <!----------------------------------------------------------------Formação Academica------------------------------------------------------------------------------------>
-
-    <div class="Experiencia_Profissional">
-
-      <h1>
-        <center>
-          <bold>Formação Acadêmica</bold>
-        </center>
-      </h1>
-      <hr style="margin-left: 100px;margin-right: 100px;">
-      <br>
-      <b>Técnico Multimedia</b>
-      <p>
-        Instituto Profissional de Técnologias Avançadas
-      </p>
-      <p>2013-2016</p>
-
-      <br>
-      <p><b>Licenciatura em Engenharia Informática</b></p>
-      <p>UAB (Universidade Aberta)</p>
-      <p>2022-Presente</p>
-
-      <!----------------------------------------------------------------Formações complementares------------------------------------------------------------------------------------>
-
-      <h1>
-        <center>
-          <bold>Formações complementares</bold>
-        </center>
-      </h1>
-
-      <hr style="margin-left: 100px;margin-right: 100px;">
-
-      <br>
-
-      <b>From Zero to Cyber Hero</b>
-      <p>
-        HighDome - A decorrer
-      </p>
-
-      <br>
-      <b>HTML</b>
-      <p>
-        SoloLearn - 2023
-      </p>
-
-      <br>
-
-      <b>Banco de Dados Oracle</b>
-      <p>
-        Udemy - 2022
-      </p>
-
-      <br>
-
-      <p><b>Técnico de Informática-Sistemas e Programação java</b></p>
-      <p>Ciccopn - 2019</p>
-
-      <br>
 
 
       <!----------------------------------------------------------------Experiencia Profissional------------------------------------------------------------------------------------>
+      <div class="col-lg-8 Experiencia_Profissional">
+        <!----------------------------------------------------------------Experiencia Profissional------------------------------------------------------------------------------------>
 
-      <h1>
-        <center>
-          <bold>Experiencia Profissional</bold>
-        </center>
-      </h1>
+        <h1>
+          <center>
+            <bold>Experiência Profissional</bold>
+          </center>
+        </h1>
 
-      <hr style="margin-left: 100px;margin-right: 100px;">
+        <hr style="margin-left: 100px;margin-right: 100px;">
 
-      <br>
+        <b>Operador CNC</b>
+        <br>Aapico Trofa
+        <br>2022-Presente
 
-      <p><b>Operador CNC</b></p>
-      <p>Aapico Trofa</p>
-      <p>2022-Presente</p>
+        <p></p>
 
-      <br>
+        <b>Policia Municipal</b>
+        <br>Policia Municipal do Municipio de Gondomar
+        <br>2020-2022
 
-      <p><b>Analista de Sistemas</b></p>
-      <p>Arfit Climatização Set.2016-Out-2019</p>
+        <p></p>
 
-      <br>
-
-      <p><b>Policia Municipal</b></p>
-      <p>Policia Municipal do Municipio de Gondomar</p>
-      <p>2020-2022</p>
-
-      <br>
-
-      <p><b>Encarregado de Armazém/Montador</b></p>
-      <p>Arfit Climatização Set.2016-Out-2019</p>
-      <p>2016-2019</p>
-
-      <p>
+        <b>Encarregado de Armazém/Montador</b>
+        <br> Arfit Climatização Set.2016-Out-2019
+        <br>2016-2019
+        <br>
         <ul>
           <li>Cargas e descargas;</li>
           <li> Acondicionamento e movimentação de mercadorias.</li>
@@ -202,16 +135,58 @@
           <li> Preparação de encomendas.</li>
           <li> Gestão de stocks</li>
         </ul>
-      </p>
+        </p>
+        <!----------------------------------------------------------------Formação Academica------------------------------------------------------------------------------------>
+        <h1>
+          <center>
+            Formação Acadêmica
+          </center>
+        </h1>
 
+        <hr style="margin-left: 100px;margin-right: 100px;">
+        <b>Técnico Multimedia</b>
+        <br> Instituto Profissional de Técnologias Avançadas
+        <br>2013-2016
+        <p></p>
+        <b>Licenciatura em Engenharia Informática</b>
+        <br>UAB (Universidade Aberta)
+        <br>2022-Presente
+
+        <!----------------------------------------------------------------Formações complementares------------------------------------------------------------------------------------>
+
+        <h1>
+          <center>
+            <bold>Formações complementares</bold>
+          </center>
+        </h1>
+
+        <hr style="margin-left: 100px;margin-right: 100px;">
+        <b>From Zero to Cyber Hero</b>
+        <br>HighDome - A decorrer
+
+        <p></p>
+
+        <br><b>HTML</b>
+        <br>SoloLearn - 2023
+        <br>
+
+        <p></p>
+
+        <b>Banco de Dados Oracle</b>
+        <br>Udemy - 2022
+
+        <p></p>
+
+        <br><b>Técnico de Informática-Sistemas e Programação java</b>
+        <br>Ciccopn - 2019
+
+
+
+
+        <!----------------------------------------------------------------Footer------------------------------------------------------------------------------------>
+      </div>
     </div>
 
-    <!----------------------------------------------------------------Footer------------------------------------------------------------------------------------>
-
-    <div class="footer">
-      <p style="color: white;">Made BY the Roundabout Iniciative</p>
-    </div>
-  </div>
 
 </body>
 
