@@ -1,30 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="Styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="script.js"></script> 
+
+</head>
 <style>
   body {
     margin: 0;
     overflow: hidden;
+    background-image: url(Multimedia/backgroiud.png);
+
   }
 
   .random-image {
     position: absolute;
   }
-  
-  body{ 
-    background-image: url(backgroiud.png);
-}
-
 </style>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="style.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script src="script.js"></script> 
-
-</head>
-
 <body>
 
   <div class="container">
@@ -33,14 +29,13 @@
 
     <!-- POP-UP-imagem de boas vindas -->
     <div id="popup" class="popup panel panel-primary">
-      <img src="boas vindas.png" alt="popup">
+      <img src="Multimedia/boas vindas.png" alt="popup">
       <div class="panel-footer">
           <button id="close" class="btn btn-lg btn-primary" onclick="redirectToLink()">Vamos a Isto?</button>
       </div>
       <script>
         function redirectToLink() {
-            // Change the URL below to the desired link
-            window.location.href = "https://www.example.com"; // Replace with your link
+            window.location.href = "CV.html"; 
         }
     </script>
   </div>
