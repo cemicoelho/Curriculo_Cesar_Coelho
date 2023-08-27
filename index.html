@@ -1,225 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CV César Coelho</title>
-  <link rel="stylesheet" href="Styles.css" />
-  <link rel="icon" href="Imagens/favicon_package_v0.16/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/939c64060d.js" crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <!----site dops--->
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .random-image {
+    position: absolute;
+  }
+  
+  body{ 
+    background-image: url(backgroiud.png);
+}
+
+</style>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="script.js"></script> 
+
 </head>
 
 <body>
 
-  <!----------------------------------------------------------------POPUP------------------------------------------------------------------------------------>
+  <div class="container">
+    <div class="row">
+      <div class="col">
 
-  <div class="popup">
-    <button id="close">&times;</button>
-    <h4>Aviso de Estado</h4>
-    <p>
-      Este curriculo ainda se encontra em desenvolvimento
-      Pelo que podem existir erros/bugs ou atrasos na atualização.
-    </p>
+    <!-- POP-UP-imagem de boas vindas -->
+    <div id="popup" class="popup panel panel-primary">
+      <img src="boas vindas.png" alt="popup">
+      <div class="panel-footer">
+          <button id="close" class="btn btn-lg btn-primary" onclick="redirectToLink()">Vamos a Isto?</button>
+      </div>
+      <script>
+        function redirectToLink() {
+            // Change the URL below to the desired link
+            window.location.href = "https://www.example.com"; // Replace with your link
+        }
+    </script>
   </div>
 
-  <!----------------------------------------------------------------SCRIPT----------------------------------------------------------------------------------------------------->
-  <script src="script.js"></script>
 
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-3 BOX_INF_PESSOAL">
+  <!-------------------------------------iamgens random------------------------------------->
+  <script>
+    // mudar as imagens 
+    var imagePaths = [
+      'IMG_3416.JPG',
+      'IMG_3417.JPG',
+      'IMG_3418.JPG',
+    ];
+    var placedImages = [];
 
-        <!----------------------------------------------------------------CAixa de Info Pessoal------------------------------------------------------------------------------------>
+    function getRandomPosition(imageWidth, imageHeight) {
+      var screenWidth = window.innerWidth;
+      var screenHeight = window.innerHeight;
 
-        <!----------------------------------------------------------------FOTO------------------------------------------------------------------------------------------------------>
-        <div class="Foto">
-          <img src="Multimedia/foto1.png" />
-        </div>
+      var maxX = screenWidth - imageWidth;
+      var maxY = screenHeight - imageHeight;
 
-        <!----------------------------------------------------------------INFO Pessoal------------------------------------------------------------------------------------>
-        <div class="INF_PESSOAL">
+      var randomX = Math.floor(Math.random() * maxX);
+      var randomY = Math.floor(Math.random() * maxY);
 
-          <h1 style="text-align: center; font-family: 'Times New Roman', Times, serif;">César</h1>
-          <h1 style="text-align: center;font-family: 'Times New Roman', Times, serif;">Coelho</h1>
+      return [randomX, randomY];
+    }
 
-          <h1 style="color: black; font-family: 'Times New Roman', Times, serif;"><u>Operador CNC</u></h1>
-          <br>
+    function checkOverlap(x, y, width, height) {
+      for (var i = 0; i < placedImages.length; i++) {
+        var image = placedImages[i];
+        if (
+          x < image.x + image.width &&
+          x + width > image.x &&
+          y < image.y + image.height &&
+          y + height > image.y
+        ) {
+          return true;
+        }
+      }
+      return false;
+    }
 
-          <h4 style="font-family: 'Times New Roman', Times, serif;"><i class="fa-solid fa-cake-candles"></i> 04/06/1997
-          </h4>
-          <h4 style="font-family: 'Times New Roman', Times, serif;"><i class="fa-solid fa-envelope"></i>
-            cesarCoelho97@gmail.com</h4>
-          <h4 style="font-family: 'Times New Roman', Times, serif;"><i class="fa-solid fa-phone"></i> 918265866</h4>
+    function createRandomImage() {
+      var img = new Image();
+      var randomImagePath = imagePaths[Math.floor(Math.random() * imagePaths.length)];
+      img.src = randomImagePath;
+      img.className = 'random-image';
 
-          <!----------------------------------------------------------------Projetos------------------------------------------------------------------------------------>
-<br><br>
-          <h1 style="text-align: center;">Projetos: </h1>
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                <h4>Projetos:</h4>
-              </div>
-              <div class="col">
-                <h4>Estado:</h4>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <h4><u>Curriculo Online.</u></h4>
-              </div>
-              <div class="col">
-                <h4>A terminar</h4>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <h4><u>Site de Lingua Gestual.</u></h4>
-            </div>
-            <div class="col">
-              <h4>Em curso</h4>
-            </div>
-          </div>
-          <!----------------------------------------------------------------HoBBIEs------------------------------------------------------------------------------------>
-<!-----
-          <p></p>
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                <h1 style="text-align: center;">Hobbies: </h1>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <h3>Jardinagem</h3>
-              </div>
-              <div class="col">
-                <h3>Gaming</h3>
-              </div>
-            </div>
+      var imageWidth = 100; // Change this to the desired image width
+      var imageHeight = 100; // Change this to the desired image height
 
-            <div class="row">
-              <div class="col">
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ?autoplay=1" style="text-decoration: none;    color:black;
-                background-color: none;" target="blank">
-                  <h3>Rick Rolling</h3>
-                </a>
-              </div>
-              <div class="col">
-                <h3>Leitura</h3>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <h3>Documentários</h3>
-              </div>
-              <div class="col">
-                <h3></h3>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <h3></h3>
-              </div>
-              <div class="col">
-                <h3></h3>
-              </div>
-            </div>
+      var position;
+      var overlapAttempts = 0;
+      do {
+        position = getRandomPosition(imageWidth, imageHeight);
+        overlapAttempts++;
+        if (overlapAttempts > 100) {
+          console.log("Couldn't find a non-overlapping position. Aborting.");
+          return;
+        }
+      } while (checkOverlap(position[0], position[1], imageWidth, imageHeight));
 
-          </div>
-        ---------------------------------------------------------------->
+      img.style.left = position[0] + 'px';
+      img.style.top = position[1] + 'px';
 
-        </div>
-      </div>
-      <!----------------------------------------------------------------Experiencia Profissional------------------------------------------------------------------------------------>
-      <div class="col-lg-8 Experiencia_Profissional">
-        <!----------------------------------------------------------------Experiencia Profissional------------------------------------------------------------------------------------>
+      img.style.width = imageWidth + 'px';
+      img.style.height = imageHeight + 'px';
 
-        <h1>
-          <center>
-            <bold>Experiência Profissional</bold>
-          </center>
-        </h1>
+      placedImages.push({ x: position[0], y: position[1], width: imageWidth, height: imageHeight });
 
-        <hr style="margin-left: 100px;margin-right: 100px;">
-        <br>
+      document.body.appendChild(img);
+    }
 
-        <b>Operador CNC</b>
-        <br>Aapico Trofa
-        <br>2022-Presente
+    // numero de copias
+    var numberOfImages = 20; 
 
-        <p></p>
-
-        <b>Policia Municipal</b>
-        <br>Policia Municipal do Municipio de Gondomar
-        <br>2020-2022
-
-        <p></p>
-
-        <b>Encarregado de Armazém/Montador</b>
-        <br> Arfit Climatização Set.2016-Out-2019
-        <br>2016-2019
-        <br>
-        <ul>
-          <li>Cargas e descargas;</li>
-          <li> Acondicionamento e movimentação de mercadorias.</li>
-          <li>Receção, conferência e armazenamento de mercadoria.</li>
-          <li> Embalamento e manipulação de produtos.</li>
-          <li> Preparação de encomendas.</li>
-          <li> Gestão de stocks</li>
-        </ul>
-        </p>
-        <!----------------------------------------------------------------Formação Academica------------------------------------------------------------------------------------>
-        <h1>
-          <center>
-            Formação Acadêmica
-          </center>
-        </h1>
-
-        <hr style="margin-left: 100px;margin-right: 100px;">
-        <br>
-
-        <b>Técnico Multimedia</b>
-        <br> Instituto Profissional de Técnologias Avançadas
-        <br>2013-2016
-        <p></p>
-        <b>Licenciatura em Engenharia Informática</b>
-        <br>UAB (Universidade Aberta)
-        <br>2022-Presente
-
-        <!----------------------------------------------------------------Formações complementares------------------------------------------------------------------------------------>
-
-        <h1>
-          <center>
-            <bold>Formações complementares</bold>
-          </center>
-        </h1>
-
-        <hr style="margin-left: 100px;margin-right: 100px;">
-<br>
-        <b>From Zero to Cyber Hero</b>
-        <br>HighDome - A decorrer
-        <p></p>
-        <b>HTML</b>
-        <br>SoloLearn - 2023
-        <br>
-        <p></p>
-        <b>Banco de Dados Oracle</b>
-        <br>Udemy - 2022
-        <p></p>
-        <b>Técnico de Informática-Sistemas e Programação java</b>
-        <br>Ciccopn - 2019
-        <!----------------------------------------------------------------Footer------------------------------------------------------------------------------------>
-      </div>
-    </div>
-
-
+    for (var i = 0; i < numberOfImages; i++) {
+      createRandomImage();
+    }
+  </script>
+  </div>
+</div>
+</div>
 </body>
 
 </html>
