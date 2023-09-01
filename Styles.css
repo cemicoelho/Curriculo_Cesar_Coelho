@@ -28,7 +28,7 @@
 
 /*-----------------------------------------------------------------------------Projetos---------------------------------------------------------------------------*/
 th,td{
-    padding-left: 100px;
+    padding-left: 80px;
     padding-right: 10px;
     border: 2px;
 }
@@ -51,26 +51,16 @@ th,td{
 }
 
 /*-----------------------------------------------------------------------------Footer---------------------------------------------------------------------------*/
-.footer {
-    position: fixed;
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-    height: 20px;
-    /* altura do footer */
-    background: black;
-}
 
 /*-----------------------------------------------------------------------------arranjar pagina web--------------------------------------------------------------------*/
-#popup {
-    display:none;
-    position:absolute;
-    margin:0 auto;
-    top: 50%;
+.img_boas_vindas{
+    position: absolute;
     left: 50%;
+    top: 40%;
     transform: translate(-50%, -50%);
-    z-index: 2;
+    z-index: 1000; 
 }
+
 
 .panel-footer {
     display: flex;

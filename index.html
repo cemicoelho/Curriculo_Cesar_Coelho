@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="Styles.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script src="script.js"></script> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+  </script>
+  <link rel="stylesheet" href="Styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="script.js"></script>
 
 </head>
 <style>
@@ -21,105 +25,147 @@
     position: absolute;
   }
 </style>
+
 <body>
 
   <div class="container">
     <div class="row">
       <div class="col">
 
-    <!-- POP-UP-imagem de boas vindas -->
-    <div id="popup" class="popup panel panel-primary">
-      <img src="Multimedia/boas vindas.png" alt="popup">
-      <div class="panel-footer">
-          <button id="close" class="btn btn-lg btn-primary" onclick="redirectToLink()">Vamos a Isto?</button>
+        <!-- POP-UP-imagem de boas vindas -->
+
+        <div class="img_boas_vindas">
+          <img src="Multimedia/boas vindas.png">
+          <div class="panel-footer">
+            <button id="close" class="btn btn-lg btn-primary" onclick="redirectToLink()">Vamos a Isto?</button>
+          </div>
+          <script>
+            function redirectToLink() {
+              window.location.href = "CV.html";
+            }
+          </script>
+        </div>
+
+
+
+        <!-------------------------------------iamgens random------------------------------------->
+        <!DOCTYPE html>
+        <html>
+
+        <head>
+          <style>
+            .random-image {
+              position: absolute;
+            }
+          </style>
+        </head>
+
+        <body>
+
+          <script>
+            // Change imagePaths to your desired image paths
+            var imagePaths = [
+              'Multimedia/1.png',
+              'Multimedia/2.png',
+              'Multimedia/3.png',
+              'Multimedia/4.png',
+              'Multimedia/5.png',
+              'Multimedia/6.png',
+              'Multimedia/7.png',
+              'Multimedia/8.png',
+
+            ];
+
+            var placedImages = [];
+
+            function getRandomPosition(imageWidth, imageHeight) {
+              var screenWidth = window.innerWidth;
+              var screenHeight = window.innerHeight;
+
+              var maxX = screenWidth - imageWidth;
+              var maxY = screenHeight - imageHeight;
+
+              var randomX = Math.floor(Math.random() * maxX);
+              var randomY = Math.floor(Math.random() * maxY);
+
+              return [randomX, randomY];
+            }
+
+            function checkOverlap(x, y, width, height) {
+              for (var i = 0; i < placedImages.length; i++) {
+                var image = placedImages[i];
+                if (
+                  x < image.x + image.width &&
+                  x + width > image.x &&
+                  y < image.y + image.height &&
+                  y + height > image.y
+                ) {
+                  return true;
+                }
+              }
+              return false;
+            }
+
+            function createRandomImage() {
+              var img = new Image();
+              var randomImagePath;
+
+              // Ensure that we don't repeat the same image
+              do {
+                randomImagePath = imagePaths[Math.floor(Math.random() * imagePaths.length)];
+              } while (placedImages.some(image => image.path === randomImagePath));
+
+              img.src = randomImagePath;
+              img.className = 'random-image';
+
+              var imageWidth = 300; // Change this to the desired image width
+              var imageHeight = 250; // Change this to the desired image height
+
+              var position;
+              var overlapAttempts = 0;
+
+              do {
+                position = getRandomPosition(imageWidth, imageHeight);
+                overlapAttempts++;
+                if (overlapAttempts > 100) {
+                  console.log("Couldn't find a non-overlapping position. Aborting.");
+                  return;
+                }
+              } while (checkOverlap(position[0], position[1], imageWidth, imageHeight));
+
+              img.style.left = position[0] + 'px';
+              img.style.top = position[1] + 'px';
+
+              img.style.width = imageWidth + 'px';
+              img.style.height = imageHeight + 'px';
+
+              img.style.zIndex = 999;
+              placedImages.push({
+                path: randomImagePath,
+                x: position[0],
+                y: position[1],
+                width: imageWidth,
+                height: imageHeight
+              });
+
+              document.body.appendChild(img);
+            }
+
+            // Number of copies
+            var numberOfImages = 8;
+
+            for (var i = 0; i < numberOfImages; i++) {
+              createRandomImage();
+            }
+          </script>
+        </body>
+
+        </html>
+
+        </script>
       </div>
-      <script>
-        function redirectToLink() {
-            window.location.href = "CV.html"; 
-        }
-    </script>
+    </div>
   </div>
-
-
-  <!-------------------------------------iamgens random------------------------------------->
-  <script>
-    // mudar as imagens 
-    var imagePaths = [
-      'IMG_3416.JPG',
-      'IMG_3417.JPG',
-      'IMG_3418.JPG',
-    ];
-    var placedImages = [];
-
-    function getRandomPosition(imageWidth, imageHeight) {
-      var screenWidth = window.innerWidth;
-      var screenHeight = window.innerHeight;
-
-      var maxX = screenWidth - imageWidth;
-      var maxY = screenHeight - imageHeight;
-
-      var randomX = Math.floor(Math.random() * maxX);
-      var randomY = Math.floor(Math.random() * maxY);
-
-      return [randomX, randomY];
-    }
-
-    function checkOverlap(x, y, width, height) {
-      for (var i = 0; i < placedImages.length; i++) {
-        var image = placedImages[i];
-        if (
-          x < image.x + image.width &&
-          x + width > image.x &&
-          y < image.y + image.height &&
-          y + height > image.y
-        ) {
-          return true;
-        }
-      }
-      return false;
-    }
-
-    function createRandomImage() {
-      var img = new Image();
-      var randomImagePath = imagePaths[Math.floor(Math.random() * imagePaths.length)];
-      img.src = randomImagePath;
-      img.className = 'random-image';
-
-      var imageWidth = 100; // Change this to the desired image width
-      var imageHeight = 100; // Change this to the desired image height
-
-      var position;
-      var overlapAttempts = 0;
-      do {
-        position = getRandomPosition(imageWidth, imageHeight);
-        overlapAttempts++;
-        if (overlapAttempts > 100) {
-          console.log("Couldn't find a non-overlapping position. Aborting.");
-          return;
-        }
-      } while (checkOverlap(position[0], position[1], imageWidth, imageHeight));
-
-      img.style.left = position[0] + 'px';
-      img.style.top = position[1] + 'px';
-
-      img.style.width = imageWidth + 'px';
-      img.style.height = imageHeight + 'px';
-
-      placedImages.push({ x: position[0], y: position[1], width: imageWidth, height: imageHeight });
-
-      document.body.appendChild(img);
-    }
-
-    // numero de copias
-    var numberOfImages = 20; 
-
-    for (var i = 0; i < numberOfImages; i++) {
-      createRandomImage();
-    }
-  </script>
-  </div>
-</div>
-</div>
 </body>
 
 </html>
