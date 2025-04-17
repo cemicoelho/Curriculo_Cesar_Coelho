@@ -34,13 +34,17 @@
 
         <!-- imagem de boas vindas e botao -->
         <div class="img_boas_vindas">
-          <img src="Multimedia/boas vindas.png" alt="imagem_boas_vindas">
           <div class="panel-footer">
-            <button id="close" class="btn btn-lg btn-primary" onclick="redirectToLink()">Lets Go ?</button>
+            <button id="close" class="btn btn-lg btn-primary"
+              onclick="redirectToLink('Intro_PT.html')">Português</button>
+            <>
+              <button id="close" class="btn btn-lg btn-primary"
+                onclick="redirectToLink('Intro_EN.html')">Inglês</button>
+
           </div>
           <script>
-            function redirectToLink() {
-              window.location.href = "CV_EN.html";
+            function redirectToLink(filename) {
+              window.location.href = filename;
             }
           </script>
         </div>
